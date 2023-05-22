@@ -1,5 +1,5 @@
 <template>
-    <header class="h-10 bg-white shadow flex justify-between items-center px-6">
+    <header class="h-12 bg-white shadow flex justify-between items-center px-6">
         <button>
             <Bars3Icon class="w-6" />
         </button>
