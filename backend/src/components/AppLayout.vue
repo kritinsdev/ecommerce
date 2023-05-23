@@ -14,9 +14,15 @@
 </template>
   
 <script setup>
+import { onMounted } from 'vue';
 import Sidebar from './Sidebar.vue';
 import TopNav from './TopNav.vue';
+import store from '../store';
 const { title } = defineProps({
     title: String
+});
+
+onMounted(() => {
+    store.dispatch('getUser');
 })
 </script>
