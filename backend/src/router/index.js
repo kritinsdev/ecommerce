@@ -3,6 +3,7 @@ import Dashboard from "../views/Dashboard.vue";
 import Login from "../views/Login.vue";
 import PasswordReset from "../views/PasswordReset.vue";
 import AppLayout from "../components/AppLayout.vue";
+import Products from "../views/Products.vue";
 import NotFound from "../views/NotFound.vue";
 import store from "../store";
 
@@ -19,6 +20,11 @@ const routes = [
                 path: 'dashboard',
                 name: 'app.dashboard',
                 component: Dashboard
+            },
+            {
+                path: 'products',
+                name: 'app.products',
+                component: Products
             }
         ]
     },

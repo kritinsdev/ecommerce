@@ -1,43 +1,64 @@
 <template>
-    <div class="w-[200px] bg-blue-700 text-white p-4">
-        <div class="flex flex-col gap-4">
-            <router-link :to="{ name: 'app.dashboard' }"
-                class="flex gap-2 items-center hover:bg-black/30 py-1 px-2 rounded">
-                <div>
-                    <HomeIcon class="w-6 h-6" />
-                </div>
-                <span class="text-sm font-light">Dashboard</span>
-            </router-link>
-
-            <router-link :to="{ name: 'app.dashboard' }"
-                class="flex gap-2 items-center hover:bg-black/30 py-1 px-2 rounded">
-                <div>
-                    <ListBulletIcon class="w-6 h-6" />
-                </div>
-                <span class="text-sm font-light">Products</span>
-            </router-link>
-
-            <router-link :to="{ name: 'app.dashboard' }"
-                class="flex gap-2 items-center hover:bg-black/30 py-1 px-2 rounded">
-                <div>
-                    <UserCircleIcon class="w-6 h-6" />
-                </div>
-                <span class="text-sm font-light">Users</span>
-            </router-link>
-
-            <router-link :to="{ name: 'app.dashboard' }"
-                class="flex gap-2 items-center hover:bg-black/30 py-1 px-2 rounded">
-                <div>
-                    <ChartBarIcon class="w-6 h-6" />
-                </div>
-                <span class="text-sm font-light">Reports</span>
-            </router-link>
-        </div>
+    <div class="min-w-[160px] w-[160px]  transition-all bg-indigo-700 text-white py-4 px-2">
+        <router-link :to="{ name: 'app.dashboard' }"
+            class="flex items-center p-2 rounded transition-colors hover:bg-black/30">
+            <span class="mr-2 text-gray-300">
+                <HomeIcon class="w-5" />
+            </span>
+            <span class="text-xs">
+                Dashboard
+            </span>
+        </router-link>
+        <router-link :to="{ name: 'app.products' }"
+            class="flex items-center p-2 rounded transition-colors hover:bg-black/30">
+            <span class="mr-2 text-gray-300">
+                <HomeIcon class="w-5" />
+            </span>
+            <span class="text-xs">
+                Products
+            </span>
+        </router-link>
+        <router-link :to="{ name: 'app.products' }"
+            class="flex items-center p-2 rounded transition-colors hover:bg-black/30">
+            <span class="mr-2 text-gray-300">
+                <HomeIcon class="w-5" />
+            </span>
+            <span class="text-xs">
+                Orders
+            </span>
+        </router-link>
+        <router-link :to="{ name: 'app.products' }"
+            class="flex items-center p-2 rounded transition-colors hover:bg-black/30">
+            <span class="mr-2 text-gray-300">
+                <UserCircleIcon class="w-5" />
+            </span>
+            <span class="text-xs">
+                Users
+            </span>
+        </router-link>
+        <router-link :to="{ name: 'app.products' }"
+            class="flex items-center p-2 rounded transition-colors hover:bg-black/30">
+            <span class="mr-2 text-gray-300">
+                <ListBulletIcon class="w-5" />
+            </span>
+            <span class="text-xs">
+                Customers
+            </span>
+        </router-link>
+        <router-link :to="{ name: 'app.products' }"
+            class="flex items-center p-2 rounded transition-colors hover:bg-black/30">
+            <span class="mr-2 text-gray-300">
+                <ChartBarIcon class="w-5" />
+            </span>
+            <span class="text-xs">
+                Reports
+            </span>
+        </router-link>
     </div>
 </template>
-
+  
 <script setup>
 import { HomeIcon, UserCircleIcon, ListBulletIcon, ChartBarIcon } from '@heroicons/vue/24/outline';
 </script>
-
-<style lang="scss" scoped></style>
+  
+<style scoped></style>

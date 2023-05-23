@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'title' => fake()->text(),
-            'image' => fake()->imageUrl(),
+            'image' => 'https://w7.pngwing.com/pngs/513/846/png-transparent-backpack-bag-timbuk2-hand-luggage-travel-black-bag-png-material-luggage-bags-black-hair.png',
             'description' => fake()->realText(2000),
             'price' => fake()->randomFloat(2, 20, 100),
             'created_at' => now(),

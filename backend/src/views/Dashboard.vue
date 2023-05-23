@@ -3,7 +3,6 @@
 </template>
 
 <script setup>
-import AppLayout from '../components/AppLayout.vue';
-
+import Spinner from '../components/core/Spinner.vue';
 
 </script>
