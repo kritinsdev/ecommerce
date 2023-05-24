@@ -8,7 +8,7 @@
             <div>
                 <MenuButton
                     class="flex gap-1 w-full items-center px-4 py-2 text-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="user" class="rounded-full w-8">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="user" class="rounded-full w-8">
                     <span>{{ currentUser.name }}</span>
                     <ChevronDownIcon class="ml-2 -mr-1 h-5 w-5 text-blue-200 hover:text-blue-100" aria-hidden="true" />
                 </MenuButton>

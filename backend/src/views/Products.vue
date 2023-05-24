@@ -84,7 +84,7 @@
                             <div>
                                 <MenuButton
                                     class="inline-flex items-center justify-center w-full justify-center rounded-full w-10 h-10 bg-black bg-opacity-0 text-sm font-medium text-white hover:bg-opacity-5 focus:bg-opacity-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                                    <DotsVerticalIcon class="h-5 w-5 text-indigo-500" aria-hidden="true" />
+                                    <PencilSquareIcon class="h-5 w-5 text-indigo-500" aria-hidden="true" />
                                 </MenuButton>
                             </div>
 
@@ -152,6 +152,7 @@
 <script setup>
 import { computed, onMounted, ref } from "vue";
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+import { TrashIcon, PencilIcon, PencilSquareIcon } from "@heroicons/vue/24/outline";
 import store from "../store";
 import { PRODUCTS_PER_PAGE } from "../constants";
 import Spinner from "../components/core/Spinner.vue";
@@ -160,6 +161,8 @@ import TableHeaderCell from "../components/core/Table/TableHeaderCell.vue";
 const perPage = ref(PRODUCTS_PER_PAGE);
 const search = ref('');
 const products = computed(() => store.state.products);
+const sortField = ref('updated_at');
+const sortDirection = ref('desc');
 
 const emit = defineEmits(['clickEdit'])
 
@@ -170,6 +173,8 @@ onMounted(() => {
 function getProducts(url = null) {
     store.dispatch("getProducts", {
         url,
+        sort_field: sortField.value,
+        sort_direction: sortDirection.value,
         search: search.value,
         perPage: perPage.value
     });
@@ -180,6 +185,21 @@ function getForPage(ev, link) {
         return;
     }
     getProducts(link.url);
+}
+
+function sortProducts(field) {
+    if (sortField.value === field) {
+        if (sortDirection.value === 'asc') {
+            sortDirection.value = 'desc';
+        } else {
+            sortDirection.value = 'asc';
+        }
+    } else {
+        sortField.value = field;
+        sortDirection.value = 'asc';
+    }
+
+    getProducts();
 }
 
 </script>

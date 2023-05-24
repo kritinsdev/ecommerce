@@ -17,7 +17,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->text(),
+            'title' => fake()->text(30),
             'image' => 'https://w7.pngwing.com/pngs/513/846/png-transparent-backpack-bag-timbuk2-hand-luggage-travel-black-bag-png-material-luggage-bags-black-hair.png',
             'description' => fake()->realText(2000),
             'price' => fake()->randomFloat(2, 20, 100),

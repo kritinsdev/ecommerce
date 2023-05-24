@@ -9,6 +9,13 @@ import store from "../store";
 
 const routes = [
     {
+        path: '/',
+        name: '',
+        meta: {
+            requiresAuth: true
+        },
+    },
+    {
         path: '/app',
         name: 'app',
         component: AppLayout,
