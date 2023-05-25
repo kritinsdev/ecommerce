@@ -14,13 +14,13 @@ class ProductFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            'title' => fake()->text(30),
-            'image' => 'https://w7.pngwing.com/pngs/513/846/png-transparent-backpack-bag-timbuk2-hand-luggage-travel-black-bag-png-material-luggage-bags-black-hair.png',
+            'title' => fake()->text(),
+            'image' => fake()->imageUrl(),
             'description' => fake()->realText(2000),
-            'price' => fake()->randomFloat(2, 20, 100),
+            'price' => fake()->randomFloat(2, 2, 5),
             'created_at' => now(),
             'updated_at' => now(),
             'created_by' => 1,
