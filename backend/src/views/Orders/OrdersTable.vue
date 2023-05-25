@@ -66,14 +66,14 @@
             <OrderStatus :order="order" />
           </td>
           <td class="border-b p-2">
-            {{ $filters.currencyUSD(order.total_price) }}
+            {{ $filters.currencyEUR(order.total_price) }}
           </td>
           <td class="border-b p-2 max-w-[200px] whitespace-nowrap overflow-hidden text-ellipsis">
             {{ order.created_at }}
           </td>
           <td class="border-b p-2 ">
             <router-link :to="{ name: 'app.orders.view', params: { id: order.id } }" class="w-8 h-8 rounded-full text-emerald-700 border border-emerald-700 flex justify-center items-center
-                            hover:text-white hover:bg-emerald-700">
+                              hover:text-white hover:bg-emerald-700">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -96,13 +96,13 @@
         <a v-for="(link, i) of orders.links" :key="i" :disabled="!link.url" href="#" @click="getForPage($event, link)"
           aria-current="page"
           class="relative inline-flex items-center px-4 py-2 border text-sm font-medium whitespace-nowrap" :class="[
-            link.active
-              ? 'z-10 bg-emerald-50 border-emerald-500 text-emerald-600'
-              : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50',
-            i === 0 ? 'rounded-l-md' : '',
-            i === orders.links.length - 1 ? 'rounded-r-md' : '',
-            !link.url ? ' bg-gray-100 text-gray-700' : ''
-          ]" v-html="link.label">
+                        link.active
+                          ? 'z-10 bg-emerald-50 border-emerald-500 text-emerald-600'
+                          : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50',
+                        i === 0 ? 'rounded-l-md' : '',
+                        i === orders.links.length - 1 ? 'rounded-r-md' : '',
+                        !link.url ? ' bg-gray-100 text-gray-700' : ''
+                      ]" v-html="link.label">
         </a>
       </nav>
     </div>

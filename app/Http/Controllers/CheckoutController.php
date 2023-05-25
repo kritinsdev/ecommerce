@@ -34,10 +34,10 @@ class CheckoutController extends Controller
             $totalPrice += $product->price * $quantity;
             $lineItems[] = [
                 'price_data' => [
-                    'currency' => 'usd',
+                    'currency' => 'eur',
                     'product_data' => [
                         'name' => $product->title,
-//                        'images' => [$product->image]
+                        //                        'images' => [$product->image]
                     ],
                     'unit_amount' => $product->price * 100,
                 ],
@@ -49,9 +49,9 @@ class CheckoutController extends Controller
                 'unit_price' => $product->price
             ];
         }
-//        dd(route('checkout.failure', [], true));
+        //        dd(route('checkout.failure', [], true));
 
-//        dd(route('checkout.success', [], true) . '?session_id={CHECKOUT_SESSION_ID}');
+        //        dd(route('checkout.success', [], true) . '?session_id={CHECKOUT_SESSION_ID}');
 
         $session = \Stripe\Checkout\Session::create([
             'line_items' => $lineItems,
@@ -137,10 +137,10 @@ class CheckoutController extends Controller
         foreach ($order->items as $item) {
             $lineItems[] = [
                 'price_data' => [
-                    'currency' => 'usd',
+                    'currency' => 'eur',
                     'product_data' => [
                         'name' => $item->product->title,
-//                        'images' => [$product->image]
+                        //                        'images' => [$product->image]
                     ],
                     'unit_amount' => $item->unit_price * 100,
                 ],
@@ -174,7 +174,9 @@ class CheckoutController extends Controller
 
         try {
             $event = \Stripe\Webhook::constructEvent(
-                $payload, $sig_header, $endpoint_secret
+                $payload,
+                $sig_header,
+                $endpoint_secret
             );
         } catch (\UnexpectedValueException $e) {
             // Invalid payload
@@ -216,7 +218,7 @@ class CheckoutController extends Controller
         $adminUsers = User::where('is_admin', 1)->get();
 
         foreach ([...$adminUsers, $order->user] as $user) {
-            Mail::to($user)->send(new NewOrderEmail($order, (bool)$user->is_admin));
+            Mail::to($user)->send(new NewOrderEmail($order, (bool) $user->is_admin));
         }
     }
 }

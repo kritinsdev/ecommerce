@@ -66,7 +66,7 @@
             {{ product.title }}
           </td>
           <td class="border-b p-2">
-            {{ $filters.currencyUSD(product.price) }}
+            {{ $filters.currencyEUR(product.price) }}
           </td>
           <td class="border-b p-2 ">
             {{ product.updated_at }}
@@ -89,18 +89,18 @@
                   <div class="px-1 py-1">
                     <MenuItem v-slot="{ active }">
                     <button :class="[
-                      active ? 'bg-emerald-600 text-white' : 'text-gray-900',
-                      'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                    ]" @click="editProduct(product)">
+                                            active ? 'bg-emerald-600 text-white' : 'text-gray-900',
+                                            'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                                          ]" @click="editProduct(product)">
                       <PencilIcon :active="active" class="mr-2 h-5 w-5 text-emerald-400" aria-hidden="true" />
                       Edit
                     </button>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
                     <button :class="[
-                      active ? 'bg-emerald-600 text-white' : 'text-gray-900',
-                      'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                    ]" @click="deleteProduct(product)">
+                                            active ? 'bg-emerald-600 text-white' : 'text-gray-900',
+                                            'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                                          ]" @click="deleteProduct(product)">
                       <TrashIcon :active="active" class="mr-2 h-5 w-5 text-emerald-400" aria-hidden="true" />
                       Delete
                     </button>
@@ -124,13 +124,13 @@
         <a v-for="(link, i) of products.links" :key="i" :disabled="!link.url" href="#" @click="getForPage($event, link)"
           aria-current="page"
           class="relative inline-flex items-center px-4 py-2 border text-sm font-medium whitespace-nowrap" :class="[
-            link.active
-              ? 'z-10 bg-emerald-50 border-emerald-500 text-emerald-600'
-              : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50',
-            i === 0 ? 'rounded-l-md' : '',
-            i === products.links.length - 1 ? 'rounded-r-md' : '',
-            !link.url ? ' bg-gray-100 text-gray-700' : ''
-          ]" v-html="link.label">
+                        link.active
+                          ? 'z-10 bg-emerald-50 border-emerald-500 text-emerald-600'
+                          : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50',
+                        i === 0 ? 'rounded-l-md' : '',
+                        i === products.links.length - 1 ? 'rounded-r-md' : '',
+                        !link.url ? ' bg-gray-100 text-gray-700' : ''
+                      ]" v-html="link.label">
         </a>
       </nav>
     </div>

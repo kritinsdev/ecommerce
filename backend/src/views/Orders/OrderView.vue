@@ -9,26 +9,26 @@
       </h2>
       <table>
         <tbody>
-        <tr>
-          <td class="font-bold py-1 px-2">Order #</td>
-          <td>{{ order.id }}</td>
-        </tr>
-        <tr>
-          <td class="font-bold py-1 px-2">Order Date</td>
-          <td>{{ order.created_at }}</td>
-        </tr>
-        <tr>
-          <td class="font-bold py-1 px-2">Order Status</td>
-          <td>
-            <select v-model="order.status" @change="onStatusChange">
-              <option v-for="status of orderStatuses" :value="status">{{status}}</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td class="font-bold py-1 px-2">SubTotal</td>
-          <td>{{ $filters.currencyUSD(order.total_price) }}</td>
-        </tr>
+          <tr>
+            <td class="font-bold py-1 px-2">Order #</td>
+            <td>{{ order.id }}</td>
+          </tr>
+          <tr>
+            <td class="font-bold py-1 px-2">Order Date</td>
+            <td>{{ order.created_at }}</td>
+          </tr>
+          <tr>
+            <td class="font-bold py-1 px-2">Order Status</td>
+            <td>
+              <select v-model="order.status" @change="onStatusChange">
+                <option v-for="status of orderStatuses" :value="status">{{status}}</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-bold py-1 px-2">SubTotal</td>
+            <td>{{ $filters.currencyEUR(order.total_price) }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -39,18 +39,18 @@
       <h2 class="text-xl font-semibold mt-6 pb-2 border-b border-gray-300">Customer Details</h2>
       <table>
         <tbody>
-        <tr>
-          <td class="font-bold py-1 px-2">Full Name</td>
-          <td>{{ order.customer.first_name }} {{ order.customer.last_name }}</td>
-        </tr>
-        <tr>
-          <td class="font-bold py-1 px-2">Email</td>
-          <td>{{ order.customer.email }}</td>
-        </tr>
-        <tr>
-          <td class="font-bold py-1 px-2">Phone</td>
-          <td>{{ order.customer.phone }}</td>
-        </tr>
+          <tr>
+            <td class="font-bold py-1 px-2">Full Name</td>
+            <td>{{ order.customer.first_name }} {{ order.customer.last_name }}</td>
+          </tr>
+          <tr>
+            <td class="font-bold py-1 px-2">Email</td>
+            <td>{{ order.customer.email }}</td>
+          </tr>
+          <tr>
+            <td class="font-bold py-1 px-2">Phone</td>
+            <td>{{ order.customer.phone }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -87,9 +87,8 @@
       <div v-for="item of order.items">
         <!-- Order Item -->
         <div class="flex flex-col sm:flex-row items-center  gap-4">
-          <a href="#"
-             class="w-36 h-32 flex items-center justify-center overflow-hidden">
-            <img :src="item.product.image" class="object-cover" alt=""/>
+          <a href="#" class="w-36 h-32 flex items-center justify-center overflow-hidden">
+            <img :src="item.product.image" class="object-cover" alt="" />
           </a>
           <div class="flex flex-col justify-between flex-1">
             <div class="flex justify-between mb-3">
@@ -99,12 +98,12 @@
             </div>
             <div class="flex justify-between items-center">
               <div class="flex items-center">Qty: {{ item.quantity }}</div>
-              <span class="text-lg font-semibold"> {{ $filters.currencyUSD(item.unit_price) }} </span>
+              <span class="text-lg font-semibold"> {{ $filters.currencyEUR(item.unit_price) }} </span>
             </div>
           </div>
         </div>
         <!--/ Order Item -->
-        <hr class="my-3"/>
+        <hr class="my-3" />
       </div>
     </div>
     <!--/    Order Items-->
@@ -144,6 +143,4 @@ function onStatusChange() {
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

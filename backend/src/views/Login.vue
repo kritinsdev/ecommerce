@@ -1,5 +1,5 @@
 <template>
-  <GuestLayout title="Sign in to your account">
+  <GuestLayout title="Purseverance">
     <form class="mt-8 space-y-6" method="POST" @submit.prevent="login">
       <div v-if="errorMsg" class="flex items-center justify-between py-3 px-5 bg-red-500 text-white rounded">
         {{ errorMsg }}
@@ -35,7 +35,8 @@
         </div>
 
         <div class="text-sm">
-          <router-link :to="{ name: 'requestPassword' }" class="font-medium text-emerald-600 hover:text-emerald-500"> Forgot
+          <router-link :to="{ name: 'requestPassword' }" class="font-medium text-emerald-600 hover:text-emerald-500">
+            Forgot
             your password?
           </router-link>
         </div>
