@@ -3,8 +3,22 @@
     cartItemsCount: {{ \App\Helpers\Cart::getCartItemsCount() }},
 }" @cart-change.window="cartItemsCount = $event.detail.count"
     class="flex py-4 px-10 items-center justify-between">
+    <nav>
+        <ul class="flex gap-5 text-sm">
+            <li>
+                <a href="#">HOME</a>
+            </li>
+            <li>
+                <a href="#">SHOP</a>
+            </li>
+            <li>
+                <a href="#">PAGES</a>
+            </li>
+        </ul>
+    </nav>
+
     <div>
-        <a href="{{ route('home') }}" class="font-bold text-xl"> PURSEVERANCE </a>
+        <a href="{{ route('home') }}" class="font-bold tracking-wider text-lg"> PURSE.VERANCE </a>
     </div>
     <!-- Responsive Menu -->
     <div class="block bg-slate-50 shadow fixed z-10 top-0 bottom-0 height h-full w-[220px] transition-all md:hidden"
@@ -103,7 +117,7 @@
         </ul>
     </div>
     <!--/ Responsive Menu -->
-    <nav class="hidden md:block">
+    <div class="hidden md:block">
         <ul class="flex gap-2">
             <li class="flex items-center">
                 <a href="{{ route('cart.index') }}"
@@ -187,7 +201,7 @@
                 </li>
             @endif
         </ul>
-    </nav>
+    </div>
     <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-4 block md:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">

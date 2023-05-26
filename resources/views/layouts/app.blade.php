@@ -21,9 +21,11 @@
     @include('layouts.navigation')
     @include('components.hero')
 
-    <main class="p-5">
+    <main class="px-10 py-5">
         {{ $slot }}
     </main>
+
+    @include('layouts.footer');
 
     <div x-data="toast" x-show="visible" x-transition x-cloak @notify.window="show($event.detail.message)"
         class="fixed w-[400px] left-1/2 -ml-[200px] rounded top-16 py-2 px-4 pb-4 bg-emerald-500 text-white">
