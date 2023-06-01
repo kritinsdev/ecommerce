@@ -19,7 +19,6 @@
 
 <body>
     @include('layouts.navigation')
-    @include('components.hero')
 
     <main class="px-10 py-5">
         {{ $slot }}

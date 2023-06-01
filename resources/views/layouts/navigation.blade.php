@@ -3,10 +3,10 @@
     cartItemsCount: {{ \App\Helpers\Cart::getCartItemsCount() }},
 }" @cart-change.window="cartItemsCount = $event.detail.count"
     class="flex py-4 px-10 items-center justify-between">
-    <nav>
+    <nav class="hidden md:block">
         <ul class="flex gap-5 text-sm">
             <li>
-                <a href="#">HOME</a>
+                <a href="/">HOME</a>
             </li>
             <li>
                 <a href="#">SHOP</a>
