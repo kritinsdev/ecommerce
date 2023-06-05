@@ -1,8 +1,8 @@
 <x-app-layout>
-    <div class="w-[440px] mx-auto p-6 my-16 bg-white rounded-lg shadow">
+    <div class="w-[440px] mx-auto p-6 my-16 bg-white rounded-lg shadow-md">
         <form method="POST" action="{{ route('login') }}">
-            <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white mb-4">
-                Login to your account
+            <h2 class="text-xl font-bold leading-tight tracking-tight mb-4 text-gray-900 md:text-2xl dark:text-white">
+                Sign in to your account
             </h2>
 
             <!-- Session Status -->
@@ -11,7 +11,7 @@
             @csrf
             <div class="mb-6">
                 <label for="email" class="text-sm font-medium text-gray-900">Your email</label>
-                <x-input class="mt-2" type="email" name="email" placeholder="Your email " :value="old('email')" />
+                <x-input class="mt-2" type="email" name="email" placeholder="Type your email" :value="old('email')" />
             </div>
             <div class="mb-6">
                 <label for="email" class="text-sm font-medium text-gray-900">Password</label>
