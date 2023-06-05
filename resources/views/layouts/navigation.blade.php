@@ -2,24 +2,11 @@
     mobileMenuOpen: false,
     cartItemsCount: {{ \App\Helpers\Cart::getCartItemsCount() }},
 }" @cart-change.window="cartItemsCount = $event.detail.count"
-    class="flex py-4 px-10 items-center justify-between">
-    <nav class="hidden md:block">
-        <ul class="flex gap-5 text-sm">
-            <li>
-                <a href="/">HOME</a>
-            </li>
-            <li>
-                <a href="#">SHOP</a>
-            </li>
-            <li>
-                <a href="#">PAGES</a>
-            </li>
-        </ul>
-    </nav>
-
+    class="flex py-4 px-10 items-center justify-between bg-neutral-100">
     <div>
-        <a href="{{ route('home') }}" class="font-bold tracking-wider text-lg"> PURSE.VERANCE </a>
+        <a href="{{ route('home') }}" class="font-bold tracking-wider text-3xl">PURSEVERANCE</a>
     </div>
+    
     <!-- Responsive Menu -->
     <div class="block bg-slate-50 shadow fixed z-10 top-0 bottom-0 height h-full w-[220px] transition-all md:hidden"
         :class="mobileMenuOpen ? 'left-0' : '-left-[220px]'">
