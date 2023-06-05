@@ -32,7 +32,7 @@
                             {{ $product->title }}
                         </a>
                     </h3>
-                    <h5 class="text-sm text-gray-500 font-light">${{ $product->price }}</h5>
+                    <h5 class="text-sm text-gray-500 font-light">€{{ $product->price }}</h5>
                 </div>
                 <div class="inline-flex gap-2 bg-neutral-100 rounded justify-between p-2 text-neutral-800 cursor-pointer" @click="addToCart()">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
