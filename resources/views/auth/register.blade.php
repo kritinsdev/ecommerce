@@ -27,7 +27,7 @@
                 <x-input placeholder="••••••••" type="password" name="password_confirmation" />
             </div>
 
-            <button class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full">
+            <button class="btn-primary w-full">
                 Signup
             </button>
 

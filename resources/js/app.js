@@ -12,7 +12,7 @@ document.addEventListener("alpine:init", async () => {
 
   Alpine.data("toast", () => ({
     visible: false,
-    delay: 5000,
+    delay: 2000,
     percent: 0,
     interval: null,
     timeout: null,
@@ -59,7 +59,7 @@ document.addEventListener("alpine:init", async () => {
           .then(result => {
             this.$dispatch('cart-change', {count: result.count})
             this.$dispatch("notify", {
-              message: "The item was added into the cart",
+              message: `${product.title} was added into the cart`,
             });
           })
           .catch(response => {
@@ -70,7 +70,7 @@ document.addEventListener("alpine:init", async () => {
         post(this.product.removeUrl)
           .then(result => {
             this.$dispatch("notify", {
-              message: "The item was removed from cart",
+              message: `${this.product.title} was removed from cart`,
             });
             this.$dispatch('cart-change', {count: result.count})
             this.cartItems = this.cartItems.filter(p => p.id !== product.id)
