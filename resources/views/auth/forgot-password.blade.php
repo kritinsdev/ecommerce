@@ -13,7 +13,7 @@
             or
             <a
                 href="{{ route('login') }}"
-                class="text-purple-600 hover:text-purple-500"
+                class="text-gray-600 hover:text-gray-500"
             >
                 login with existing account
             </a>
